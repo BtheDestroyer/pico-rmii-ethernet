@@ -27,6 +27,7 @@ void netif_status_callback(struct netif *netif)
 }
 
 int main() {
+    sleep_ms(5000);
     // LWIP network interface
     struct netif netif;
 
@@ -46,7 +47,11 @@ int main() {
 
     // initialize stdio after the clock change
     stdio_init_all();
-    sleep_ms(5000);
+    for (int i = 0; i < 10; ++i)
+    {
+        printf("hello\n");
+        sleep_ms(1000);    
+    }
     
     printf("pico rmii ethernet - httpd\n");
 
